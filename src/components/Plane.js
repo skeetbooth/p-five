@@ -1,9 +1,8 @@
-import './App.css'
 import { ReactP5Wrapper } from '@p5-wrapper/react'
 
-function App() {
+const Plane = () => {
   const sketch = (p5) => {
-    p5.setup = () => p5.createCanvas(900, 900, p5.WEBGL)
+    p5.setup = () => p5.createCanvas(900, 600, p5.WEBGL)
     p5.draw = () => {
       p5.background(0)
       p5.normalMaterial()
@@ -17,11 +16,10 @@ function App() {
   }
 
   return (
-    <div className=''>
-      <h1 className='text-white font-bold p-5'>P5 Playground</h1>
+    <>
       <ReactP5Wrapper sketch={sketch} />
-    </div>
+    </>
   )
 }
 
-export default App
+export default Plane
